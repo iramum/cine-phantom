@@ -6,25 +6,31 @@
 	<link rel="stylesheet" href="globals.css" />
 	<link rel="stylesheet" href="style.css" />
 </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.269/pdf.min.mjs" type="module"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+	integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="magazines.js"></script>
+<script src="pdfLoader.js" type="module"></script>
+<script src="main.js" type="module"></script>
 
 <body>
 	<div class="frame">
 		<div class="header-wrapper"><img class="header" src="img/header-1-1.png" /></div>
 		<div class="div">
-			<div class="div-wrapper">
+			<div class="autors-link">
 				<div class="text-wrapper">Авторы</div>
 			</div>
 			<div class="div-2">
-				<div class="div-wrapper-2">
+				<div class="year" data-year="2012">
 					<div class="text-wrapper">2012</div>
 				</div>
-				<div class="div-wrapper-3">
+				<div class="year" data-year="2013">
 					<div class="text-wrapper">2013</div>
 				</div>
-				<div class="div-wrapper-3">
+				<div class="year" data-year="2014">
 					<div class="text-wrapper">2014</div>
 				</div>
-				<div class="div-wrapper-3">
+				<div class="year" data-year="2015">
 					<div class="text-wrapper">2015</div>
 				</div>
 			</div>
@@ -52,40 +58,43 @@
 				</p>
 			</div>
 		</div>
-		<div class="div-4">
-			<div class="div-5">
+		<div class="magazine-container">
+			<div class="m-block" id="2012">
 				<div class="div-6">
 					<div class="div-wrapper-5">
-						<div class="text-wrapper-2">2012</div>
+						<div class="m-year">2012</div>
 					</div>
 					<div class="div-7">
-						<div class="text-wrapper-3">#01/254</div>
-						<p class="text-wrapper-3">22 мая - 29 мая</p>
+						<div class="text-wrapper-3  m-number">#01/254</div>
+						<p class="text-wrapper-3 m-date">22 мая - 29 мая</p>
 					</div>
 				</div>
 				<div class="div-wrapper-6">
-					<div class="text-wrapper-4">КИНОСУИЦИД</div>
+					<div class="text-wrapper-4 m-title">КИНОСУИЦИД</div>
 				</div>
-				<div class="cover-wrapper"><img class="cover" src="img/cover-1-4.png" /></div>
+				<div class="cover-wrapper"><img class="cover" src="static/covers/254.jpg" /></div>
 				<div class="div-8">
-					<img class="img" src="img/frame-20-4.svg" />
+					<div class="arrows-box">
+						<img class="layer" src="img/layer-1-1.svg" /> <img class="layer" src="img/layer-1-1-1.svg" />
+					</div>
 					<div class="div-wrapper-7">
-						<div class="text-wrapper-5">смотреть pdf-версию</div>
+						<div class="text-wrapper-5 pdf-link"><a href="static/numbers/254.pdf">смотреть pdf-версию</a>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="div-5">
+			<div class="m-block">
 				<div class="div-6">
 					<div class="div-wrapper-5">
-						<div class="text-wrapper-2">2012</div>
+						<div class="m-year">2012</div>
 					</div>
 					<div class="div-7">
-						<div class="text-wrapper-3">#01/254</div>
-						<p class="text-wrapper-3">22 мая - 29 мая</p>
+						<div class="text-wrapper-3  m-number">#01/254</div>
+						<p class="text-wrapper-3 m-date">22 мая - 29 мая</p>
 					</div>
 				</div>
 				<div class="div-wrapper-6">
-					<div class="text-wrapper-4">КИНОСУИЦИД</div>
+					<div class="text-wrapper-4 m-title">КИНОСУИЦИД</div>
 				</div>
 				<div class="cover-wrapper"><img class="cover" src="img/cover-1-4.png" /></div>
 				<div class="div-8">
@@ -95,18 +104,18 @@
 					</div>
 				</div>
 			</div>
-			<div class="div-5">
+			<div class="m-block">
 				<div class="div-6">
 					<div class="div-wrapper-5">
-						<div class="text-wrapper-2">2012</div>
+						<div class="m-year">2012</div>
 					</div>
 					<div class="div-7">
-						<div class="text-wrapper-3">#01/254</div>
-						<p class="text-wrapper-3">22 мая - 29 мая</p>
+						<div class="text-wrapper-3  m-number">#01/254</div>
+						<p class="text-wrapper-3 m-date">22 мая - 29 мая</p>
 					</div>
 				</div>
 				<div class="div-wrapper-6">
-					<div class="text-wrapper-4">КИНОСУИЦИД</div>
+					<div class="text-wrapper-4 m-title">КИНОСУИЦИД</div>
 				</div>
 				<div class="cover-wrapper"><img class="cover" src="img/cover-1-4.png" /></div>
 				<div class="div-8">
@@ -116,18 +125,18 @@
 					</div>
 				</div>
 			</div>
-			<div class="div-5">
+			<div class="m-block">
 				<div class="div-6">
 					<div class="div-wrapper-5">
-						<div class="text-wrapper-2">2012</div>
+						<div class="m-year">2012</div>
 					</div>
 					<div class="div-7">
-						<div class="text-wrapper-3">#01/254</div>
-						<p class="text-wrapper-3">22 мая - 29 мая</p>
+						<div class="text-wrapper-3  m-number">#01/254</div>
+						<p class="text-wrapper-3 m-date">22 мая - 29 мая</p>
 					</div>
 				</div>
 				<div class="div-wrapper-6">
-					<div class="text-wrapper-4">КИНОСУИЦИД</div>
+					<div class="text-wrapper-4 m-title">КИНОСУИЦИД</div>
 				</div>
 				<div class="cover-wrapper"><img class="cover" src="img/cover-1-4.png" /></div>
 				<div class="div-8">
@@ -137,18 +146,18 @@
 					</div>
 				</div>
 			</div>
-			<div class="div-5">
+			<div class="m-block">
 				<div class="div-6">
 					<div class="div-wrapper-5">
-						<div class="text-wrapper-2">2012</div>
+						<div class="m-year">2012</div>
 					</div>
 					<div class="div-7">
-						<div class="text-wrapper-3">#01/254</div>
-						<p class="text-wrapper-3">22 мая - 29 мая</p>
+						<div class="text-wrapper-3 m-number">#01/254</div>
+						<p class="text-wrapper-3 m-date">22 мая - 29 мая</p>
 					</div>
 				</div>
 				<div class="div-wrapper-6">
-					<div class="text-wrapper-4">КИНОСУИЦИД</div>
+					<div class="text-wrapper-4 m-title">КИНОСУИЦИД</div>
 				</div>
 				<div class="cover-wrapper"><img class="cover" src="img/cover-1-4.png" /></div>
 				<div class="div-8">
