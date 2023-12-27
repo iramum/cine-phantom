@@ -26,35 +26,12 @@ $(document).ready(function () {
 					$elem.empty();
 					$elem.append(`<img src="${img}"></img>`);
 				});
-
-				// $block.find(".left").click(e => {
-
-				// 	console.log("Click: " + m.id)
-
-				// 	var currentPage = !!m.currentPage ? m.currentPage : 0;
-				// 	if (currentPage == 0) {
-				// 		currentPage = m.pages - 1;
-				// 	} else {
-				// 		currentPage--;
-				// 	}
-				// 	var img = m.previews[currentPage];
-
-				// 	if (!img) {
-				// 		console.error("No preview found");
-				// 		console.log(m);
-				// 	} else {
-				// 		if ($elem.children().length === 0) {
-				// 			$elem.append(`<img src="${img}"></img>`);
-				// 		} else {
-				// 			$elem.find('img').attr('src', img);
-				// 		}
-				// 	}
-				// })
 			}
 		})
 
 	});
 
+	$('.year:first').click();
 
 	$container.on('click', '.left', function (e) {
 
