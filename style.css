@@ -1,0 +1,317 @@
+.frame {
+  display: inline-flex;
+  flex-direction: column;
+  max-width: 1170px;
+  height: 1973px;
+  align-items: center;
+  position: relative;
+}
+
+.frame .header-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 1170px;
+  height: 172px;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+.frame .header {
+  position: relative;
+  width: 1156px;
+  height: 162px;
+  margin-bottom: -10px;
+  margin-right: -6px;
+  object-fit: cover;
+}
+
+.frame .div {
+  display: flex;
+  width: 1170px;
+  height: 42px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  border: 4px solid;
+  border-color: #000000;
+}
+
+.frame .div-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 24px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #000000;
+}
+
+.frame .text-wrapper {
+  width: fit-content;
+  margin-top: -1px;
+  font-weight: 700;
+  color: #ffffff;
+  position: relative;
+  font-family: "Source Code Pro", Helvetica;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .div-2 {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.frame .div-wrapper-2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 20px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #e81621;
+}
+
+.frame .div-wrapper-3 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 23px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #000000;
+}
+
+.frame .div-3 {
+  display: flex;
+  width: 1156px;
+  height: 265px;
+  align-items: center;
+  justify-content: center;
+  gap: 170px;
+  padding: 24px 0px 0px;
+  position: relative;
+}
+
+.frame .element-CINE-FANTOM-wrapper {
+  display: flex;
+  width: 493px;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  position: relative;
+  align-self: stretch;
+}
+
+.frame .element-CINE-FANTOM {
+  position: relative;
+  align-self: stretch;
+  width: 493px;
+  margin-top: -1px;
+  font-family: "Source Code Pro", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .div-wrapper-4 {
+  display: flex;
+  width: 493px;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  position: relative;
+  margin-top: -7px;
+  margin-bottom: -7px;
+}
+
+.frame .p {
+  width: 493px;
+  height: 255px;
+  margin-top: -1px;
+  font-weight: 400;
+  color: #000000;
+  position: relative;
+  font-family: "Source Code Pro", Helvetica;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .div-4 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1170px;
+  align-items: center;
+  gap: 18px 32px;
+  position: relative;
+  flex: 0 0 auto;
+  border-top-width: 4px;
+  border-top-style: solid;
+  border-color: #000000;
+}
+
+.frame .div-5 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 4px;
+  position: relative;
+  flex: 0 0 auto;
+  border: 4px solid;
+  border-color: #000000;
+}
+
+.frame .div-6 {
+  display: flex;
+  width: 370px;
+  height: 54px;
+  align-items: flex-start;
+  gap: 5px;
+  position: relative;
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+  border-color: #000000;
+}
+
+.frame .div-wrapper-5 {
+  display: flex;
+  width: 100px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+  background-color: #000000;
+}
+
+.frame .text-wrapper-2 {
+  position: relative;
+  width: fit-content;
+  font-family: "Source Code Pro", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .div-7 {
+  display: inline-flex;
+  flex-direction: column;
+  height: 50px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.frame .text-wrapper-3 {
+  width: fit-content;
+  font-weight: 400;
+  color: #000000;
+  position: relative;
+  font-family: "Source Code Pro", Helvetica;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .div-wrapper-6 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+  border-color: #000000;
+}
+
+.frame .text-wrapper-4 {
+  position: relative;
+  width: fit-content;
+  margin-top: -4px;
+  font-family: "Source Code Pro", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame .cover-wrapper {
+  display: flex;
+  width: 370px;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0px;
+  position: relative;
+}
+
+.frame .cover {
+  position: relative;
+  width: 352px;
+  height: 500px;
+  margin-top: -10px;
+  margin-bottom: -10px;
+  object-fit: cover;
+}
+
+.frame .div-8 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #f2f2f2;
+}
+
+.frame .img {
+  position: relative;
+  width: 370px;
+  flex: 0 0 auto;
+}
+
+.frame .div-wrapper-7 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.frame .text-wrapper-5 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Source Code Pro", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  text-decoration: underline;
+}
