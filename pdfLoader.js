@@ -83,7 +83,7 @@ export async function loadPdfToGallery(id) {
 		var base64Image = canvas.toDataURL('image/jpeg'); // Convert canvas to JPEG Base64
 
 		result.push({ src: base64Image, width: width });
-		//result.push({ src: "static/1.jpg", width: width });
+		//result.push({ src: "static/2.jpg" });
 
 		// Clean up the canvas to free memory
 		context.clearRect(0, 0, canvas.width, canvas.height);

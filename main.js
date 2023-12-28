@@ -99,7 +99,7 @@ $(document).ready(function () {
 	const dynamicGallery = lightGallery($dynamicGallery, {
 		dynamic: true,
 		scale: 1,
-		showZoomInOutIcons: true,
+		// showZoomInOutIcons: true,
 		zoomOnMaxOnly: true,
 		infiniteZoom: false,
 		plugins: [lgZoom],
@@ -112,10 +112,14 @@ $(document).ready(function () {
 		var magazineId = $(this).closest('.m-block').attr('id');
 		console.log('Show gallary ' + magazineId);
 
+		$('#preloader').show();
+
 		loadPdfToGallery(parseInt(magazineId)).then(imgs => {
 			console.log(imgs);
+			$('#preloader').hide();
 			dynamicGallery.refresh(imgs);
 			dynamicGallery.openGallery();
+
 		});
 	});
 
