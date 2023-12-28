@@ -1,4 +1,4 @@
-import { loadPdf } from './pdfLoader.js';
+import { loadPdf, loadPdfToGallery } from './pdfLoader.js';
 
 
 $(document).ready(function () {
@@ -94,6 +94,31 @@ $(document).ready(function () {
 			}
 		}
 	})
+
+	const $dynamicGallery = document.getElementById('gallery');
+	const dynamicGallery = lightGallery($dynamicGallery, {
+		dynamic: true,
+		scale: 1,
+		showZoomInOutIcons: true,
+		zoomOnMaxOnly: true,
+		infiniteZoom: false,
+		plugins: [lgZoom],
+		dynamicEl: [
+
+		],
+	});
+
+	$container.on('click', '.cover-wrapper', function (e) {
+		var magazineId = $(this).closest('.m-block').attr('id');
+		console.log('Show gallary ' + magazineId);
+
+		loadPdfToGallery(parseInt(magazineId)).then(imgs => {
+			console.log(imgs);
+			dynamicGallery.refresh(imgs);
+			dynamicGallery.openGallery();
+		});
+	});
+
 
 });
 

@@ -330,3 +330,60 @@
   width: 40px;
   height: 40px;
 }
+
+
+
+
+
+.lg-outer .lg-item.lg-complete.lg-zoomable .lg-img-wrap {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden
+}
+
+.lg-outer .lg-item.lg-complete.lg-zoomable .lg-dummy-img,
+.lg-outer .lg-item.lg-complete.lg-zoomable .lg-image {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform .5s cubic-bezier(.12, .415, .01, 1.19) 0s, opacity .15s !important;
+  -moz-transition: -moz-transform .5s cubic-bezier(.12, .415, .01, 1.19) 0s, opacity .15s !important;
+  -o-transition: -o-transform .5s cubic-bezier(.12, .415, .01, 1.19) 0s, opacity .15s !important;
+  transition: transform .5s cubic-bezier(.12, .415, .01, 1.19) 0s, opacity .15s !important;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden
+}
+
+.lg-outer .lg-item.lg-complete.lg-zoomable .lg-dummy-img.no-transition,
+.lg-outer .lg-item.lg-complete.lg-zoomable .lg-image.no-transition {
+  transition: none !important
+}
+
+.lg-outer .lg-item.lg-complete.lg-zoomable .lg-dummy-img.reset-transition,
+.lg-outer .lg-item.lg-complete.lg-zoomable .lg-image.reset-transition {
+  transform: scale(1) translate(-50%, -50%) !important;
+  max-width: none !important;
+  max-height: none !important;
+  top: 50% !important;
+  left: 50% !important
+}
+
+.lg-outer .lg-item.lg-complete.lg-zoomable .lg-dummy-img.reset-transition-x,
+.lg-outer .lg-item.lg-complete.lg-zoomable .lg-image.reset-transition-x {
+  transform: scale(1) translate(-50%, 0) !important;
+  top: 0 !important;
+  left: 50% !important;
+  max-width: none !important;
+  max-height: none !important
+}
+
+.lg-outer .lg-item.lg-complete.lg-zoomable .lg-dummy-img.reset-transition-y,
+.lg-outer .lg-item.lg-complete.lg-zoomable .lg-image.reset-transition-y {
+  /* transform:scale3d(1,1,1) translate3d(0,-50%,0)!important; */
+  top: 50% !important;
+  left: 0 !important;
+  max-width: none !important;
+  max-height: none !important
+}

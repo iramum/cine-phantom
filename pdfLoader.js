@@ -55,3 +55,42 @@ export async function loadPdf(model, callback) {
 
 }
 
+export async function loadPdfToGallery(id) {
+	var url = `static/numbers/${id}.pdf`;
+
+
+	var pdf = await pdfjsLib.getDocument(url).promise;
+
+	var totalPages = pdf.numPages;
+
+	var result = [];
+
+	for (let pageNum = 1; pageNum <= totalPages; pageNum++) {
+		var page = await pdf.getPage(pageNum);
+
+		var viewport = page.getViewport({ scale: 2 });
+
+		var width = viewport.width;
+		console.log(width);
+
+		var canvas = document.createElement('canvas');
+		var context = canvas.getContext('2d');
+		canvas.height = viewport.height;
+		canvas.width = viewport.width;
+
+		await page.render({ canvasContext: context, viewport: viewport }).promise;
+
+		var base64Image = canvas.toDataURL('image/jpeg'); // Convert canvas to JPEG Base64
+
+		result.push({ src: base64Image, width: width });
+		//result.push({ src: "static/1.jpg", width: width });
+
+		// Clean up the canvas to free memory
+		context.clearRect(0, 0, canvas.width, canvas.height);
+		canvas = null;
+	}
+
+	return result;
+
+}
+
