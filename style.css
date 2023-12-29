@@ -265,7 +265,10 @@
   justify-content: center;
   padding: 10px 0px;
   position: relative;
-  z-index: -1;
+}
+
+.cover-wrapper img {
+    z-index: -1;
 }
 
 .frame .cover {
