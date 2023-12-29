@@ -1,33 +1,40 @@
 import { loadPdf, loadPdfToGallery } from './pdfLoader.js';
 
 
+
 $(document).ready(function () {
 	console.log("Ready");
 
 	let $container = $('.magazine-container');
+	let $authorsContainer = $('#authors-wrapper');
+
+	createAuthorsLayout(magazines, $container);
 
 	$('.year').click(function () {
 		var year = parseInt($(this).data('year'));
 		console.log('Year: ' + year);
-		$('.year').removeClass('selected-year');
+		$('.year').removeClass('selected-item');
 		// Add 'selected-year' class to the clicked div
-		$(this).addClass('selected-year');
+		$(this).addClass('selected-item');
+		$('.autors-link').removeClass('selected-item');
 
-		$container.empty();
+		const filtered = magazines.filter(m => m.year === year);
 
-		magazines.forEach(m => {
-			if (m.year === year) {
-				let block = generateMagazineBlock(m);
-				var $block = $container.append(block);
+		generateMagazinesLayout(filtered, $container);
 
-				var $elem = $block.find(`#preview-${m.id}`);
+		$container.show();
+		$authorsContainer.hide();
 
-				loadPdf(m, img => {
-					$elem.empty();
-					$elem.append(`<img src="${img}"></img>`);
-				});
-			}
-		})
+	});
+
+	$('.autors-link').click(function () {
+		console.log("Select authors");
+		$('.year').removeClass('selected-item');
+		$(this).addClass('selected-item');
+
+		$container.hide();
+		$authorsContainer.show();
+
 
 	});
 
@@ -126,6 +133,69 @@ $(document).ready(function () {
 
 });
 
+function generateMagazinesLayout(magazines, $container) {
+
+	$container.empty();
+
+	magazines.forEach(m => {
+		let block = generateMagazineBlock(m);
+		var $block = $container.append(block);
+
+		var $elem = $block.find(`#preview-${m.id}`);
+
+		loadPdf(m, img => {
+			$elem.empty();
+			$elem.append(`<img src="${img}"></img>`);
+		});
+	});
+}
+
+
+function createAuthorsLayout(magazines, $container) {
+	let authorMap = new Map();
+
+	magazines.forEach(magazine => {
+		magazine.authors.forEach(author => {
+			let firstLetter = author[0].toUpperCase();
+			if (!authorMap.has(firstLetter)) {
+				authorMap.set(firstLetter, new Set());
+			}
+			authorMap.get(firstLetter).add(author);
+		});
+	});
+
+	// Convert Sets to arrays, sort the map by keys (letters) and the author arrays
+	let sortedAuthorMap = new Map([...authorMap.entries()].sort().map(([key, authorsSet]) => [key, [...authorsSet].sort()]));
+
+	console.log(sortedAuthorMap);
+
+	let authorsLayout = generateAuthors(sortedAuthorMap);
+
+	const $authors = $("#authors");
+
+	$authors.append(authorsLayout);
+
+	$authors.on('click', '.author-item:not(.author-letter)', function () {
+		var name = $(this).text();
+		console.log(name);
+
+		const filtered = getMagazinesByAuthor(name);
+
+		generateMagazinesLayout(filtered, $container);
+
+		$container.show();
+		$('#authors-wrapper').hide();
+
+		// Additional code to handle the click event
+		// For example, you can use 'name' here as needed
+	});
+}
+
+
+function getMagazinesByAuthor(authorName) {
+	return magazines.filter(magazine => magazine.authors.includes(authorName));
+}
+
 function generateMagazineBlock(magazine) {
 	let block = `
             <div class="m-block" id="${magazine.id}">
@@ -155,4 +225,20 @@ function generateMagazineBlock(magazine) {
         `;
 
 	return block;
+}
+
+function generateAuthors(authorsMap) {
+
+	var result = "";
+
+	authorsMap.forEach((v, k) => {
+		result = result + `<div class='author-container'><div class="author-item author-letter">${k}</div>`
+		v.forEach(n => {
+			result = result + `<div class="author-item author-name">${n}</div>`
+		})
+		result = result + "</div>";
+	})
+
+	return result;
+
 }
